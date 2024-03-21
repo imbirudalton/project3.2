@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Portal</title>
     <style>
-    /* Resetting default styles */
+ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
-   font-family: "Roboto", sans-serif;
     line-height: 1.6;
 }
 
@@ -28,14 +28,18 @@ nav ul {
     list-style-type: none;
     padding: 10px;
     text-align: center;
+    position: relative;
+    width: 100%;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 100px;
+    color: black;
 }
 
 nav ul li a {
+    font-size: 15px;
     text-decoration: none;
     color: #333;
 }
@@ -44,13 +48,10 @@ nav ul li a:hover {
     color: #007bff;
 }
 
-.content {
-    padding: 20px;
-    text-align: center;
-}
+
 
 footer {
-    background-color: #f8f9fa;
+    background-color: #007bff;
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -66,16 +67,45 @@ footer {
     </header>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="patientpage.html">Home</a></li>
             <li><a href="#">Appointments</a></li>
             <li><a href="#">Medical Records</a></li>
             <li><a href="#">Prescriptions</a></li>
-            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    <section class="content">
-        <h2>Your Appointments</h2>
-        <p>No appointments scheduled.</p>
+    <section>
+        <div>
+            <input type="image">
+        </div>
+        <div>
+            <h4>Name:</h4>
+            <h4>Patient ID:</h4>
+            <h4>Last Visit:</h4>
+            <button>Update</button>
+        </div>
+        <div>
+            <h2>Information:</h2>
+            <h4>Age:</h4>
+            <h4>Gender:</h4>
+            <h4>Blood Type:</h4>
+            <h4>Allergies:</h4>
+            <h4>Diseases:</h4>
+            <h4>Height:</h4>
+            <h4>Weight:</h4>
+        </div>
+    </section>
+    <section>
+        <h1>Appointments</h1>
+        <button>Book Now</button>
+    </section>
+
+    <section>
+        <h1>Medical Records</h1>
+    </section>
+    
+    <section>
+        <h1>Prescriptions</h1>
+
     </section>
     <footer>
         <p>&copy; 2024 Patient Portal. All rights reserved.</p>

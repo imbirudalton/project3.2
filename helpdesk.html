@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpdesk</title>
+    <style>
+       
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:hsl(211, 100%, 50%);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background-color:hsl(211, 100%, 50%);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #chat-box {
+            height: 500px;
+            max-width: 600px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1pxhslhsl(211, 100%, 50%);
+            border-radius: 25px;
+            
+        }
+        .placeholder {
+            color:blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Helpdesk</h1>
+        <div id="chat-box"></div>
+        <input type="text" id="question" placeholder="how can i help you..">
+        <button onclick="askQuestion()">Ask</button>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const questionInput = document.getElementById('question');
+
+        function askQuestion() {
+            const question = questionInput.value;
+            const answer = getAnswer(question);
+            displayMessage(question, 'user');
+            displayMessage(answer, 'bot');
+            questionInput.value = '';
+        }
+
+        function getAnswer(question) {
+            
+            switch (question.toLowerCase()) {
+                case 'Hello am Dancen,i want to be treated':
+                    return "hello Dancen, how can i help you";
+                    case 'i have pain in my back':
+                    return "Am sorry for that Dancen, ill recommend some drugs for you, do you have any other problem?";
+                case 'no':
+                    return "penicilin 500mg/ centrifuaxion 1000mg ,azitromyzine 500mg, you will also need an injection please visit our facility for more info";
+                case 'what are good painkillers for pain?':
+                    return "Acetaminophen (Tylenol), ibuprofen (Advil, Motrin), and aspirin are commonly used painkillers for headaches.";
+                default:
+                    return "thank you for contacting, how may i be of help.";
+            }
+        }
+
+        function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
